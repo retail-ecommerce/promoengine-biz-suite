@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<bean id="checker" class="com.doublechaintech.promoengine.PromoengineChecker" scope="prototype"></bean>
+
+	<bean id="platformManagerBase" class="com.doublechaintech.promoengine.platform.PlatformManagerImpl"/>
+	<bean id="platformManager" class="com.doublechaintech.promoengine.platform.PlatformCustomManagerImpl" parent="platformManagerBase" ></bean>
+	
+	<bean id="applyConditionManagerBase" class="com.doublechaintech.promoengine.applycondition.ApplyConditionManagerImpl"/>
+	<bean id="applyConditionManager" class="com.doublechaintech.promoengine.applycondition.ApplyConditionManagerImpl" parent="applyConditionManagerBase" ></bean>
+	
+	<bean id="actionTypeManagerBase" class="com.doublechaintech.promoengine.actiontype.ActionTypeManagerImpl"/>
+	<bean id="actionTypeManager" class="com.doublechaintech.promoengine.actiontype.ActionTypeManagerImpl" parent="actionTypeManagerBase" ></bean>
+	
+	<bean id="promotionLevelManagerBase" class="com.doublechaintech.promoengine.promotionlevel.PromotionLevelManagerImpl"/>
+	<bean id="promotionLevelManager" class="com.doublechaintech.promoengine.promotionlevel.PromotionLevelManagerImpl" parent="promotionLevelManagerBase" ></bean>
+	
+	<bean id="promotionManagerBase" class="com.doublechaintech.promoengine.promotion.PromotionManagerImpl"/>
+	<bean id="promotionManager" class="com.doublechaintech.promoengine.promotion.PromotionCustomManagerImpl" parent="promotionManagerBase" ></bean>
+	
+	<bean id="targetUserRuleManagerBase" class="com.doublechaintech.promoengine.targetuserrule.TargetUserRuleManagerImpl"/>
+	<bean id="targetUserRuleManager" class="com.doublechaintech.promoengine.targetuserrule.TargetUserRuleManagerImpl" parent="targetUserRuleManagerBase" ></bean>
+	
+	<bean id="targetActionManagerBase" class="com.doublechaintech.promoengine.targetaction.TargetActionManagerImpl"/>
+	<bean id="targetActionManager" class="com.doublechaintech.promoengine.targetaction.TargetActionManagerImpl" parent="targetActionManagerBase" ></bean>
+	
+	<bean id="promotionOfferManagerBase" class="com.doublechaintech.promoengine.promotionoffer.PromotionOfferManagerImpl"/>
+	<bean id="promotionOfferManager" class="com.doublechaintech.promoengine.promotionoffer.PromotionOfferManagerImpl" parent="promotionOfferManagerBase" ></bean>
+	
+	<bean id="userDomainManagerBase" class="com.doublechaintech.promoengine.userdomain.UserDomainManagerImpl"/>
+	<bean id="userDomainManager" class="com.doublechaintech.promoengine.userdomain.UserDomainCustomManagerImpl" parent="userDomainManagerBase" ></bean>
+	
+	<bean id="userWhiteListManagerBase" class="com.doublechaintech.promoengine.userwhitelist.UserWhiteListManagerImpl"/>
+	<bean id="userWhiteListManager" class="com.doublechaintech.promoengine.userwhitelist.UserWhiteListManagerImpl" parent="userWhiteListManagerBase" ></bean>
+	
+	<bean id="secUserManagerBase" class="com.doublechaintech.promoengine.secuser.SecUserManagerImpl"/>
+	<bean id="secUserManager" class="com.doublechaintech.promoengine.secuser.SecUserCustomManagerImpl" parent="secUserManagerBase" ></bean>
+	
+	<bean id="secUserBlockingManagerBase" class="com.doublechaintech.promoengine.secuserblocking.SecUserBlockingManagerImpl"/>
+	<bean id="secUserBlockingManager" class="com.doublechaintech.promoengine.secuserblocking.SecUserBlockingCustomManagerImpl" parent="secUserBlockingManagerBase" ></bean>
+	
+	<bean id="userAppManagerBase" class="com.doublechaintech.promoengine.userapp.UserAppManagerImpl"/>
+	<bean id="userAppManager" class="com.doublechaintech.promoengine.userapp.UserAppCustomManagerImpl" parent="userAppManagerBase" ></bean>
+	
+	<bean id="listAccessManagerBase" class="com.doublechaintech.promoengine.listaccess.ListAccessManagerImpl"/>
+	<bean id="listAccessManager" class="com.doublechaintech.promoengine.listaccess.ListAccessManagerImpl" parent="listAccessManagerBase" ></bean>
+	
+	<bean id="objectAccessManagerBase" class="com.doublechaintech.promoengine.objectaccess.ObjectAccessManagerImpl"/>
+	<bean id="objectAccessManager" class="com.doublechaintech.promoengine.objectaccess.ObjectAccessManagerImpl" parent="objectAccessManagerBase" ></bean>
+	
+	<bean id="loginHistoryManagerBase" class="com.doublechaintech.promoengine.loginhistory.LoginHistoryManagerImpl"/>
+	<bean id="loginHistoryManager" class="com.doublechaintech.promoengine.loginhistory.LoginHistoryManagerImpl" parent="loginHistoryManagerBase" ></bean>
+	
+	<bean id="genericFormManagerBase" class="com.doublechaintech.promoengine.genericform.GenericFormManagerImpl"/>
+	<bean id="genericFormManager" class="com.doublechaintech.promoengine.genericform.GenericFormCustomManagerImpl" parent="genericFormManagerBase" ></bean>
+	
+	<bean id="formMessageManagerBase" class="com.doublechaintech.promoengine.formmessage.FormMessageManagerImpl"/>
+	<bean id="formMessageManager" class="com.doublechaintech.promoengine.formmessage.FormMessageManagerImpl" parent="formMessageManagerBase" ></bean>
+	
+	<bean id="formFieldMessageManagerBase" class="com.doublechaintech.promoengine.formfieldmessage.FormFieldMessageManagerImpl"/>
+	<bean id="formFieldMessageManager" class="com.doublechaintech.promoengine.formfieldmessage.FormFieldMessageManagerImpl" parent="formFieldMessageManagerBase" ></bean>
+	
+	<bean id="formFieldManagerBase" class="com.doublechaintech.promoengine.formfield.FormFieldManagerImpl"/>
+	<bean id="formFieldManager" class="com.doublechaintech.promoengine.formfield.FormFieldManagerImpl" parent="formFieldManagerBase" ></bean>
+	
+	<bean id="formActionManagerBase" class="com.doublechaintech.promoengine.formaction.FormActionManagerImpl"/>
+	<bean id="formActionManager" class="com.doublechaintech.promoengine.formaction.FormActionManagerImpl" parent="formActionManagerBase" ></bean>
+	
+
+	<bean id="managerGroupBase" class="com.doublechaintech.promoengine.ManagerGroup">
+		<property name="platformManager" ref="platformManager"/>
+		<property name="applyConditionManager" ref="applyConditionManager"/>
+		<property name="actionTypeManager" ref="actionTypeManager"/>
+		<property name="promotionLevelManager" ref="promotionLevelManager"/>
+		<property name="promotionManager" ref="promotionManager"/>
+		<property name="targetUserRuleManager" ref="targetUserRuleManager"/>
+		<property name="targetActionManager" ref="targetActionManager"/>
+		<property name="promotionOfferManager" ref="promotionOfferManager"/>
+		<property name="userDomainManager" ref="userDomainManager"/>
+		<property name="userWhiteListManager" ref="userWhiteListManager"/>
+		<property name="secUserManager" ref="secUserManager"/>
+		<property name="secUserBlockingManager" ref="secUserBlockingManager"/>
+		<property name="userAppManager" ref="userAppManager"/>
+		<property name="listAccessManager" ref="listAccessManager"/>
+		<property name="objectAccessManager" ref="objectAccessManager"/>
+		<property name="loginHistoryManager" ref="loginHistoryManager"/>
+		<property name="genericFormManager" ref="genericFormManager"/>
+		<property name="formMessageManager" ref="formMessageManager"/>
+		<property name="formFieldMessageManager" ref="formFieldMessageManager"/>
+		<property name="formFieldManager" ref="formFieldManager"/>
+		<property name="formActionManager" ref="formActionManager"/>
+	</bean>
+	<bean id="managerGroup" parent="managerGroupBase"></bean>
+	
+
+
+</beans>
+
+
+
+
+
+
+
+

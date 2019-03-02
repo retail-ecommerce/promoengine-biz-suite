@@ -1,0 +1,78 @@
+<?xml version='1.0' ?>
+<root org="doublechaintech" chinese_name="Promotion Service" english_name="Promotion Service">
+
+	<platform
+		name="Chain eComerce Platform"
+		introduction="new generation of eCommerce platform based on opensource and modern tech"
+		current_version="V1.0"
+		
+	
+	/>
+	
+	<apply_condition
+		name="All|With Id|Has Property|In Group Of"
+		
+		
+		
+		last_update_time="updateTime()"
+		platform="$(platform)"
+	/>
+	<action_type
+		name="View Home Page|View Category Page|View Product Detail Page|Add To Shopping Cart|Search"
+		last_update_time="updateTime()"
+		platform="$(platform)"
+	/>
+	
+	<promotion_level
+		name="Order Level|Shipping|Line Item"
+		last_update_time="updateTime()"
+		platform="$(platform)"
+	/>
+	
+	 <!-- Multiple site support -->
+	<promotion
+		name="Good Day Promotion"
+		
+		valid_after="2019-09-09T09:09:09"
+		expire_time="2020-09-09T09:09:09"
+		
+		last_update_time="updateTime()"
+		platform="$(platform)"
+	/>
+	
+	<target_user_rule
+		name="rule1"
+		apply_condition="$(apply_condition)"
+		parameter="...|P000012|age>30|Young Girls"
+		last_update_time="updateTime()"
+		promotion="$(promotion)"
+	/>
+	
+	<target_action
+		name="rule1"
+		action="$(action_type)"
+		parameter="...|P000012|age>30|Young Girls"
+		last_update_time="updateTime()"
+		promotion="$(promotion)"
+	/>
+	
+	<promotion_offer
+		name="Get One For Free|Buy With Fix Price|Buy With Fix Price|Free Shipping"
+		promotion_level="$(promotion_level)"
+		parameter="...|P000012|age>30|Young Girls"
+		promotion="$(promotion)"
+	/>
+	
+	
+	
+</root>
+ 
+
+
+
+
+
+
+
+
+
